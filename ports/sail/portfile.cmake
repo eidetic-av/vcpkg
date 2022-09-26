@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO HappySeaFox/sail
-    REF v0.9.0-pre20
-    SHA512 e11e05a452b62d6ad3d4c464994f410aa4829660003299b2d75910f0e089bde52bac73cf46b1be00524b157e059607867765f90615a6f5090c6106f12589dbb8
+    REF v0.9.0-rc1
+    SHA512 c9b04bdf92600c0b1d38e00b31ec28f841b76fa41c50524199665de3e97a74b2633b8e9dc4bce1820521245b9d3bf04788eb1b5de9e3516e421927205d09ac47
     HEAD_REF master
 )
 
@@ -21,8 +21,8 @@ vcpkg_cmake_install()
 vcpkg_copy_pdbs()
 
 # Remove duplicate files
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include
-                    ${CURRENT_PACKAGES_DIR}/debug/share)
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include"
+                    "${CURRENT_PACKAGES_DIR}/debug/share")
 
 # Move cmake configs
 vcpkg_cmake_config_fixup(PACKAGE_NAME sail       CONFIG_PATH lib/cmake/sail       DO_NOT_DELETE_PARENT_CONFIG_PATH)
